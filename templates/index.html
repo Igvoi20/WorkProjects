@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Images</h2>
+{% for item in data %}
+<div>
+<img src="{{ url_for('static', filename='images/' + item.image.filename) }}" width="300">
+<p>👍 {{ item.likes }} 👎 {{ item.dislikes }}</p>
+<a href="/vote/{{ item.image.id }}/1">Like</a>
+<a href="/vote/{{ item.image.id }}/-1">Dislike</a>
+</div>
+<hr>
+{% endfor %}
+{% endblock %}

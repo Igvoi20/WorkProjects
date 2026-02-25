@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Like Site</title>
+</head>
+<body>
+<a href="/">Home</a>
+{% if current_user.is_authenticated %}
+<a href="/logout">Logout</a>
+{% else %}
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+{% endif %}
+<hr>
+{% block content %}{% endblock %}
+</body>
+</html>
